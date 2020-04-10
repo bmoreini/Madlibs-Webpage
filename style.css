@@ -1,0 +1,13 @@
+#startGame {
+  margin-top:10px;
+  background-color:lightcoral;
+  display:block;
+}
+#theText, #theInstructions {
+  width:90%;
+  height:100px;
+}
+
+#input-area {
+  display:none;
+}
