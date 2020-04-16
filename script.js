@@ -24,7 +24,7 @@ function startGame() {
 
 function getText() {
     let sentenceString = textBox.value;
-		var sentence = sentenceString.split(" ");
+		sentence = sentenceString.split(" ");
     console.log("Sentence: "+sentence);
 		instructions.innerHTML= "How many words to replace?";
     resetTextBox();
@@ -39,7 +39,7 @@ function getText() {
     replacements = textBox.value;
     console.log("Replacements = "+replacements);
     let newInstructs = "Great! You want to change "+replacements+ " words? Here are the words in your sentence, numbered: \n";
-    newInstructs+=wordMenu(sentence);
+    newInstructs+=wordMenu();
 		instructions.innerHTML= newInstructs;
     resetTextBox();
     playButton.innerHTML = "Specify Replacements";
@@ -50,9 +50,10 @@ function getText() {
     textBox.value = "";
   }
 
-  function wordMenu(sentence){
+  function wordMenu(){
     let numberedWords = "";
-    for (let word=0; word<=sentence.length; word++) {
+    console.log("Sentence is: "+sentence);
+    for (let word=0; word<sentence.length; word++) {
       numberedWords+=word+1+ " - " +sentence[word]+"\n";
     }
     return numberedWords;
